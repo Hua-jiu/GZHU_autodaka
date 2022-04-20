@@ -16,7 +16,7 @@ def auto_daka(name, key, test_flag, long_sleep):
         # option.add_argument('disable-dev-shm-usage')
         # option.add_experimental_option('useAutomationExtension', False)
         # option.add_experimental_option('excludeSwitches', ['enable-automation'])
-        # driver = webdriver.Chrome(chrome_options=option)
+        # driver = webdriver.Chrome(options=option)
     # 将健康表的地址copy过来就行
     driver.get('https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
     sleep(2)
