@@ -20,7 +20,6 @@ def auto_daka(name, key, test_flag, long_sleep):
     # 将健康表的地址copy过来就行
     driver.get('https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
     sleep(2)
-    print("网址打开，准备登录教务系统")
     driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div[2]/div[1]/div[1]/div['
                                  '2]/input').click()
     driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div[2]/div[1]/div[1]/div['
@@ -35,9 +34,42 @@ def auto_daka(name, key, test_flag, long_sleep):
                                  '/form/div[2]/div[2]/div[1]/div[3]/a').click()
     sleep(3)
     print('教务系统登录完成')
-    driver.find_element_by_xpath('/html/body/div[4]/form/div/div/div/div/div[1]/div[4]/span/a').click()
+    driver.find_element_by_xpath(
+        '/html/body/div[4]/form/div/div/div/div/div[1]/div[4]/span/a').click()
     print('开始填报')
     sleep(long_sleep)
+
+    #  test append
+    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr['
+                                 '2]/td/div/table/tbody/tr[9]/td[2]/div/input[1]').click()
+
+    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr['
+                                 '2]/td/div/table/tbody/tr[10]/td[1]/div/div/span/span[1]/span/span[2]').click()
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('广东省')
+    sleep(1)
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('\n')
+
+    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr['
+                                 '2]/td/div/table/tbody/tr[10]/td[2]/div/div/span/span[1]/span/span[2]').click()
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('广州市')
+    sleep(1)
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('\n')
+
+    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr['
+                                 '2]/td/div/table/tbody/tr[10]/td[3]/div/div/span/span[1]/span/span[2]').click()
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('番禺区')
+    sleep(1)
+    driver.find_element_by_xpath(
+        '/html/body/span/span/span[1]/input').send_keys('\n')
+    driver.find_element_by_xpath('//*[@id="V1_CTRL122"]').send_keys('广州大学')
+    #  test append
+
+    driver.find_element_by_xpath('//*[@id="V1_CTRL238"]').click()
     driver.find_element_by_xpath('//*[@id="V1_CTRL243"]').click()
     driver.find_element_by_xpath('//*[@id="V1_CTRL46"]').click()
     sleep(0.1)
@@ -47,9 +79,9 @@ def auto_daka(name, key, test_flag, long_sleep):
     sleep(0.1)
     driver.find_element_by_xpath('//*[@id="V1_CTRL82"]').click()
     sleep(0.1)
-    driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()  # 提交表单
+    driver.find_element_by_xpath(
+        '/html/body/div[4]/form/div/div[1]/div[2]/ul/li[1]/a').click()  # 提交表单
     sleep(0.1)
-    print('提交完成')
     sleep(4)
     driver.quit()
     return True
